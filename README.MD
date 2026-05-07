@@ -11,4 +11,4 @@
 
 ## QA_LAB3
 
-[Отчет](./QA_LAB3_Krotov/README.MD)
+[Отчет](./QA_LAB3_Krotov/README.md)
