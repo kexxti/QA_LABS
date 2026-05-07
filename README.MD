@@ -9,6 +9,6 @@
 
 [Отчет](./QA_LAB2_Krotov/README.MD)
 
-## QA_LAB2
+## QA_LAB3
 
 [Отчет](./QA_LAB3_Krotov/README.MD)
