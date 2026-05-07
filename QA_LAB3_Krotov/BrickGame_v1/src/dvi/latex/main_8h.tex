@@ -1,0 +1,46 @@
+\doxysection{Файл main.\+h}
+\hypertarget{main_8h}{}\label{main_8h}\index{main.h@{main.h}}
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include "{}brick\+\_\+game/tetris/tetris\+\_\+lib.\+h"{}}\newline
+{\ttfamily \#include "{}gui/cli/frontend.\+h"{}}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8h_a13a43e6d814de94978c515cb084873b1}{run}} ()
+\begin{DoxyCompactList}\small\item\em Основной игровой цикл\+: обновляет состояние, отрисовывает и обрабатывает ввод \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8h_ae5fd3d9871f25d787be7205ab404bfc1}{get\+\_\+user\+\_\+input}} (int user\+\_\+action)
+\begin{DoxyCompactList}\small\item\em Преобразует код клавиши в действие пользователя и передаёт в FSM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{main_8h_ae5fd3d9871f25d787be7205ab404bfc1}\label{main_8h_ae5fd3d9871f25d787be7205ab404bfc1} 
+\index{main.h@{main.h}!get\_user\_input@{get\_user\_input}}
+\index{get\_user\_input@{get\_user\_input}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{get\_user\_input()}{get\_user\_input()}}
+{\footnotesize\ttfamily void get\+\_\+user\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+action }\end{DoxyParamCaption})}
+
+
+
+Преобразует код клавиши в действие пользователя и передаёт в FSM. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em user\+\_\+action} & Код нажатой клавиши (результат getch())\\
+\hline
+\end{DoxyParams}
+Преобразует код клавиши в действие пользователя и передаёт в FSM. \Hypertarget{main_8h_a13a43e6d814de94978c515cb084873b1}\label{main_8h_a13a43e6d814de94978c515cb084873b1} 
+\index{main.h@{main.h}!run@{run}}
+\index{run@{run}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Основной игровой цикл\+: обновляет состояние, отрисовывает и обрабатывает ввод 
+
+Основной игровой цикл\+: обновляет состояние, отрисовывает и обрабатывает ввод
+
+Получается вся информация о текущем состоянии игры;~\newline
+ Вызывается основная функцию отрисовки;~\newline
+ Вызывается конечный автомат;~\newline
+ В конце очищается консоль 

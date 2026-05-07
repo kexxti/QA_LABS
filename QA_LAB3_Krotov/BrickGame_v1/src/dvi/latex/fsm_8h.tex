@@ -1,0 +1,129 @@
+\doxysection{Файл brick\+\_\+game/tetris/fsm.h}
+\hypertarget{fsm_8h}{}\label{fsm_8h}\index{brick\_game/tetris/fsm.h@{brick\_game/tetris/fsm.h}}
+{\ttfamily \#include "{}backend.\+h"{}}\newline
+{\ttfamily \#include "{}defines.\+h"{}}\newline
+{\ttfamily \#include "{}tetris\+\_\+lib.\+h"{}}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fsm_8h_a9747541b7368d12152583127a63e4af5}{sigact}} ()
+\begin{DoxyCompactList}\small\item\em Основной диспетчер конечного автомата \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8h_a0bd206f77d2491adad5cf3b48862aaea}{start\+\_\+handler}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Обработчик состояния Begin — ожидание старта \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8h_a5dfbac2aaac02b1ef69c5f21e5f6b8b0}{moving\+\_\+handler}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Обработчик состояния Moving — движение фигуры по вводу пользователя \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8h_aa751c3a0ee7623f7597d0f3de4ce4ecb}{pause\+\_\+handler}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Обработчик состояния Break — пауза \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8h_a1c716e28606a352ca7b2187f71c6a48b}{spawn\+\_\+figure}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Обработчик состояния Spawn — инициализация новой фигуры \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fsm_8h_a764d631fa961142037c95bd3be2a1ff3}{attaching\+\_\+handler}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Обработчик состояния Attaching — фиксация фигуры на поле \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{fsm_8h_a764d631fa961142037c95bd3be2a1ff3}\label{fsm_8h_a764d631fa961142037c95bd3be2a1ff3} 
+\index{fsm.h@{fsm.h}!attaching\_handler@{attaching\_handler}}
+\index{attaching\_handler@{attaching\_handler}!fsm.h@{fsm.h}}
+\doxysubsubsection{\texorpdfstring{attaching\_handler()}{attaching\_handler()}}
+{\footnotesize\ttfamily void attaching\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Обработчик состояния Attaching — фиксация фигуры на поле 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em full\+\_\+info} & Указатель на полное состояние игры\\
+\hline
+\end{DoxyParams}
+Обработчик состояния Attaching — фиксация фигуры на поле
+
+Происходит обновление поля;~\newline
+ Идет проверка на наличие полных линий;~\newline
+ В зависимости от заполненности поля переходит в состояние Конца игры или Спавна новой фигуры \Hypertarget{fsm_8h_a5dfbac2aaac02b1ef69c5f21e5f6b8b0}\label{fsm_8h_a5dfbac2aaac02b1ef69c5f21e5f6b8b0} 
+\index{fsm.h@{fsm.h}!moving\_handler@{moving\_handler}}
+\index{moving\_handler@{moving\_handler}!fsm.h@{fsm.h}}
+\doxysubsubsection{\texorpdfstring{moving\_handler()}{moving\_handler()}}
+{\footnotesize\ttfamily void moving\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Обработчик состояния Moving — движение фигуры по вводу пользователя 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em full\+\_\+info} & Указатель на полное состояние игры\\
+\hline
+\end{DoxyParams}
+Обработчик состояния Moving — движение фигуры по вводу пользователя
+
+В зависимости от ввода пользователя двигает фигуру в нужном направлении;~\newline
+ В случае истечения времени переходит в состояние Смещения \Hypertarget{fsm_8h_aa751c3a0ee7623f7597d0f3de4ce4ecb}\label{fsm_8h_aa751c3a0ee7623f7597d0f3de4ce4ecb} 
+\index{fsm.h@{fsm.h}!pause\_handler@{pause\_handler}}
+\index{pause\_handler@{pause\_handler}!fsm.h@{fsm.h}}
+\doxysubsubsection{\texorpdfstring{pause\_handler()}{pause\_handler()}}
+{\footnotesize\ttfamily void pause\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Обработчик состояния Break — пауза 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em full\+\_\+info} & Указатель на полное состояние игры\\
+\hline
+\end{DoxyParams}
+Обработчик состояния Break — пауза
+
+В зависимости от ввода пользователя переходит в состояние Движения или Выхода из игры \Hypertarget{fsm_8h_a9747541b7368d12152583127a63e4af5}\label{fsm_8h_a9747541b7368d12152583127a63e4af5} 
+\index{fsm.h@{fsm.h}!sigact@{sigact}}
+\index{sigact@{sigact}!fsm.h@{fsm.h}}
+\doxysubsubsection{\texorpdfstring{sigact()}{sigact()}}
+{\footnotesize\ttfamily void sigact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Основной диспетчер конечного автомата 
+
+Вызывает нужный обработчик в зависимости от текущего состояния игры. Сбрасывает флаг нажатия кнопки после обработки.
+
+Основной диспетчер конечного автомата
+
+Функция обработки текущего состояния игры;~\newline
+ Меняет состояние игры в зависимости от ввода пользователя \Hypertarget{fsm_8h_a1c716e28606a352ca7b2187f71c6a48b}\label{fsm_8h_a1c716e28606a352ca7b2187f71c6a48b} 
+\index{fsm.h@{fsm.h}!spawn\_figure@{spawn\_figure}}
+\index{spawn\_figure@{spawn\_figure}!fsm.h@{fsm.h}}
+\doxysubsubsection{\texorpdfstring{spawn\_figure()}{spawn\_figure()}}
+{\footnotesize\ttfamily void spawn\+\_\+figure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Обработчик состояния Spawn — инициализация новой фигуры 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em full\+\_\+info} & Указатель на полное состояние игры\\
+\hline
+\end{DoxyParams}
+Обработчик состояния Spawn — инициализация новой фигуры
+
+Инициализируются начальные координаты фигуры;~\newline
+ Присваиваются координаты следующей фигуры текущей;~\newline
+ Создается новая следующая фигура \Hypertarget{fsm_8h_a0bd206f77d2491adad5cf3b48862aaea}\label{fsm_8h_a0bd206f77d2491adad5cf3b48862aaea} 
+\index{fsm.h@{fsm.h}!start\_handler@{start\_handler}}
+\index{start\_handler@{start\_handler}!fsm.h@{fsm.h}}
+\doxysubsubsection{\texorpdfstring{start\_handler()}{start\_handler()}}
+{\footnotesize\ttfamily void start\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Обработчик состояния Begin — ожидание старта 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em full\+\_\+info} & Указатель на полное состояние игры\\
+\hline
+\end{DoxyParams}
+Обработчик состояния Begin — ожидание старта
+
+В зависимости от ввода пользователя переходит в состояние Спавна или Выхода из игры 

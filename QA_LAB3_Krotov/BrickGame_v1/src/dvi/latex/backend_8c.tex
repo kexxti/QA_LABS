@@ -1,0 +1,276 @@
+\doxysection{Файл brick\+\_\+game/tetris/backend.c}
+\hypertarget{backend_8c}{}\label{backend_8c}\index{brick\_game/tetris/backend.c@{brick\_game/tetris/backend.c}}
+{\ttfamily \#include "{}backend.\+h"{}}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{backend_8c_ae0ead3b1763d0b87cbd480b7c2a22185}{get\+\_\+highscore}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Считывает рекорд из файла \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a1d0310e531d73c6daff06a140cf69668}{set\+\_\+highscore}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Записывает рекорд в файл \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a7e6f70612ca4162c7c16324e41f99482}{create\+\_\+next\+\_\+figure}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Создаёт новую следующую фигуру \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a33a02ceab823cce3b238495e67a9bec3}{start\+\_\+game}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Подготавливает новое игровое поле и начальные параметры \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a5f850a707f34eeade0fcf5673fdfb542}{end\+\_\+game}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Освобождает память при завершении игры \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_ad79f6c4ef22b310eb5ccdb7f32cbf3fd}{move\+\_\+left}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Сдвигает фигуру влево \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a4039238d0d01f3c9e1644579033e0d39}{move\+\_\+right}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Сдвигает фигуру вправо \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{backend_8c_a2927f83c0e3ce1e70b7d6af89f47ef92}{check\+\_\+collision}} (\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} game\+\_\+info, \mbox{\hyperlink{structFigure}{Figure}} figure)
+\begin{DoxyCompactList}\small\item\em Функция проверки столкновения с игровым полем \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a97547ae669a7298fac9f78746ffbcb95}{move\+\_\+down}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Опускает фигуру вниз \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structFigure}{Figure}} \mbox{\hyperlink{backend_8c_ae003bb59bc3e1a883b1531e36683be00}{rotated\+\_\+figure}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Возвращает координаты фигуры после поворота \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_add71a48c0a433dd4891b3206ed982b00}{rotate}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Применяет поворот с проверкой границ и коллизий \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a19eb2fb8a40a1c384f3adb897bf5b1a5}{refresh\+\_\+field}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Переносит блоки упавшей фигуры на игровое поле \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{backend_8c_a684f33088d01fe4436ae59a28f15053f}{check\+\_\+gameover}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Проверяет условие конца игры \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a28679f36e0161fe383b98b5a37bd89a2}{set\+\_\+level}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Обновляет уровень сложности \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a53eda105f7664ae921fa4031e06cec5d}{check\+\_\+full\+\_\+line}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Проверяет полные линии и начисляет очки \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{backend_8c_a1d8bad6a0d595d7a5a795f532c515786}{current\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Получает текущее время \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{backend_8c_ae71e6afd656fff83593a341358aa5a22}{check\+\_\+shifting}} (\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}full\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Проверяет таймер автоматического смещения \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_a1cbeb1cf215145b211aa9596dda1cc36}{allocate\+\_\+mem}} (int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matrix, int n, int m)
+\begin{DoxyCompactList}\small\item\em Выделяет память под двумерную матрицу \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{backend_8c_ac3da8b264ae10d1e00af142d11289a8b}{free\+\_\+mem}} (int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matrix, int n)
+\begin{DoxyCompactList}\small\item\em Освобождает память двумерной матрицы \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{backend_8c_a1cbeb1cf215145b211aa9596dda1cc36}\label{backend_8c_a1cbeb1cf215145b211aa9596dda1cc36} 
+\index{backend.c@{backend.c}!allocate\_mem@{allocate\_mem}}
+\index{allocate\_mem@{allocate\_mem}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{allocate\_mem()}{allocate\_mem()}}
+{\footnotesize\ttfamily void allocate\+\_\+mem (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int}]{n,  }\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+Выделяет память под двумерную матрицу 
+
+Выделяет динамическую двумерную матрицу n×m, инициализированную нулями \Hypertarget{backend_8c_a2927f83c0e3ce1e70b7d6af89f47ef92}\label{backend_8c_a2927f83c0e3ce1e70b7d6af89f47ef92} 
+\index{backend.c@{backend.c}!check\_collision@{check\_collision}}
+\index{check\_collision@{check\_collision}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{check\_collision()}{check\_collision()}}
+{\footnotesize\ttfamily bool check\+\_\+collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}}}]{game\+\_\+info,  }\item[{\mbox{\hyperlink{structFigure}{Figure}}}]{figure }\end{DoxyParamCaption})}
+
+
+
+Функция проверки столкновения с игровым полем 
+
+Проверяет столкновение фигуры с нижней границей или блоками на поле
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает true, если фигура столкнулась с границей или игровым полем 
+\end{DoxyReturn}
+\Hypertarget{backend_8c_a53eda105f7664ae921fa4031e06cec5d}\label{backend_8c_a53eda105f7664ae921fa4031e06cec5d} 
+\index{backend.c@{backend.c}!check\_full\_line@{check\_full\_line}}
+\index{check\_full\_line@{check\_full\_line}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{check\_full\_line()}{check\_full\_line()}}
+{\footnotesize\ttfamily void check\+\_\+full\+\_\+line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Проверяет полные линии и начисляет очки 
+
+Удаляет заполненные строки и начисляет очки
+
+Функция проходит по всем строкам игрового поля и проверяет, является ли каждая из них полной. Если линия полная, она удаляется, а все блоки выше опускаются на одну позицию. Затем обновляется счет игры и уровень сложности. \Hypertarget{backend_8c_a684f33088d01fe4436ae59a28f15053f}\label{backend_8c_a684f33088d01fe4436ae59a28f15053f} 
+\index{backend.c@{backend.c}!check\_gameover@{check\_gameover}}
+\index{check\_gameover@{check\_gameover}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{check\_gameover()}{check\_gameover()}}
+{\footnotesize\ttfamily bool check\+\_\+gameover (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Проверяет условие конца игры 
+
+Проверяет условие конца игры (блоки достигли второй строки) \Hypertarget{backend_8c_ae71e6afd656fff83593a341358aa5a22}\label{backend_8c_ae71e6afd656fff83593a341358aa5a22} 
+\index{backend.c@{backend.c}!check\_shifting@{check\_shifting}}
+\index{check\_shifting@{check\_shifting}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{check\_shifting()}{check\_shifting()}}
+{\footnotesize\ttfamily bool check\+\_\+shifting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Проверяет таймер автоматического смещения 
+
+Проверяет, истёк ли таймер для автоматического падения фигуры
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает флаг указывающий на то, прошло ли достаточное время для сдвига фигуры вниз
+\end{DoxyReturn}
+Если time равно нулю, то текущее время записывается в это поле;~\newline
+ Вычисляется скорость сдвига учитывая уровень;~\newline
+ Проверяется, прошло ли время, равное или превышающее установленное ранее время;~\newline
+ Если условия выполнены, то значение time сбрасывается в ноль. Функция возвращает true, что означает, что сдвиг должен произойти. \Hypertarget{backend_8c_a7e6f70612ca4162c7c16324e41f99482}\label{backend_8c_a7e6f70612ca4162c7c16324e41f99482} 
+\index{backend.c@{backend.c}!create\_next\_figure@{create\_next\_figure}}
+\index{create\_next\_figure@{create\_next\_figure}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{create\_next\_figure()}{create\_next\_figure()}}
+{\footnotesize\ttfamily void create\+\_\+next\+\_\+figure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Создаёт новую следующую фигуру 
+
+Случайным образом создаёт следующую фигуру из 7 шаблонов
+
+Содержит шаблоны фигур и случайным образом создает новую фигуру \Hypertarget{backend_8c_a1d8bad6a0d595d7a5a795f532c515786}\label{backend_8c_a1d8bad6a0d595d7a5a795f532c515786} 
+\index{backend.c@{backend.c}!current\_time@{current\_time}}
+\index{current\_time@{current\_time}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{current\_time()}{current\_time()}}
+{\footnotesize\ttfamily unsigned long long current\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Получает текущее время 
+
+Возвращает текущее время в миллисекундах
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает текущее время в миллисекундах 
+\end{DoxyReturn}
+\Hypertarget{backend_8c_a5f850a707f34eeade0fcf5673fdfb542}\label{backend_8c_a5f850a707f34eeade0fcf5673fdfb542} 
+\index{backend.c@{backend.c}!end\_game@{end\_game}}
+\index{end\_game@{end\_game}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{end\_game()}{end\_game()}}
+{\footnotesize\ttfamily void end\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Освобождает память при завершении игры 
+
+Завершает игру\+: освобождает память поля и следующей фигуры
+
+Происходит очищение памяти игрового поля и фигуры \Hypertarget{backend_8c_ac3da8b264ae10d1e00af142d11289a8b}\label{backend_8c_ac3da8b264ae10d1e00af142d11289a8b} 
+\index{backend.c@{backend.c}!free\_mem@{free\_mem}}
+\index{free\_mem@{free\_mem}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{free\_mem()}{free\_mem()}}
+{\footnotesize\ttfamily void free\+\_\+mem (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Освобождает память двумерной матрицы 
+
+Освобождает память, выделенную под двумерную матрицу \Hypertarget{backend_8c_ae0ead3b1763d0b87cbd480b7c2a22185}\label{backend_8c_ae0ead3b1763d0b87cbd480b7c2a22185} 
+\index{backend.c@{backend.c}!get\_highscore@{get\_highscore}}
+\index{get\_highscore@{get\_highscore}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{get\_highscore()}{get\_highscore()}}
+{\footnotesize\ttfamily void get\+\_\+highscore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Считывает рекорд из файла 
+
+Считывает рекорд из файла и сохраняет в структуру \Hypertarget{backend_8c_a97547ae669a7298fac9f78746ffbcb95}\label{backend_8c_a97547ae669a7298fac9f78746ffbcb95} 
+\index{backend.c@{backend.c}!move\_down@{move\_down}}
+\index{move\_down@{move\_down}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{move\_down()}{move\_down()}}
+{\footnotesize\ttfamily void move\+\_\+down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Опускает фигуру вниз 
+
+Опускает фигуру на одну клетку вниз или переходит в состояние Attaching.
+
+В случае столкновения переходит в состояние Присоединения, иначе состояние Движения \Hypertarget{backend_8c_ad79f6c4ef22b310eb5ccdb7f32cbf3fd}\label{backend_8c_ad79f6c4ef22b310eb5ccdb7f32cbf3fd} 
+\index{backend.c@{backend.c}!move\_left@{move\_left}}
+\index{move\_left@{move\_left}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{move\_left()}{move\_left()}}
+{\footnotesize\ttfamily void move\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Сдвигает фигуру влево 
+
+Сдвигает фигуру на одну клетку влево (если нет коллизии) \Hypertarget{backend_8c_a4039238d0d01f3c9e1644579033e0d39}\label{backend_8c_a4039238d0d01f3c9e1644579033e0d39} 
+\index{backend.c@{backend.c}!move\_right@{move\_right}}
+\index{move\_right@{move\_right}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{move\_right()}{move\_right()}}
+{\footnotesize\ttfamily void move\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Сдвигает фигуру вправо 
+
+Сдвигает фигуру на одну клетку вправо (если нет коллизии) \Hypertarget{backend_8c_a19eb2fb8a40a1c384f3adb897bf5b1a5}\label{backend_8c_a19eb2fb8a40a1c384f3adb897bf5b1a5} 
+\index{backend.c@{backend.c}!refresh\_field@{refresh\_field}}
+\index{refresh\_field@{refresh\_field}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{refresh\_field()}{refresh\_field()}}
+{\footnotesize\ttfamily void refresh\+\_\+field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Переносит блоки упавшей фигуры на игровое поле 
+
+Фиксирует блоки текущей фигуры на игровом поле \Hypertarget{backend_8c_add71a48c0a433dd4891b3206ed982b00}\label{backend_8c_add71a48c0a433dd4891b3206ed982b00} 
+\index{backend.c@{backend.c}!rotate@{rotate}}
+\index{rotate@{rotate}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Применяет поворот с проверкой границ и коллизий 
+
+Поворачивает текущую фигуру с проверкой границ и коллизий
+
+Сначала создается новая повернутая фигура;~\newline
+ Затем проверяются координаты этой фигуры по горизонтали, в случае выхода фигуры за границы она смещается во внутрь;~\newline
+ Затем проверяются координаты вокруг фигуры. Если фигура не сталкивается с полем, то новая фигура присваивается текущей. \Hypertarget{backend_8c_ae003bb59bc3e1a883b1531e36683be00}\label{backend_8c_ae003bb59bc3e1a883b1531e36683be00} 
+\index{backend.c@{backend.c}!rotated\_figure@{rotated\_figure}}
+\index{rotated\_figure@{rotated\_figure}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{rotated\_figure()}{rotated\_figure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFigure}{Figure}} rotated\+\_\+figure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Возвращает координаты фигуры после поворота 
+
+Вычисляет новую фигуру после поворота на 90° по часовой стрелке
+
+\begin{DoxyReturn}{Возвращает}
+Возвращает новую повернутую на 90 градусов фигуру 
+\end{DoxyReturn}
+\Hypertarget{backend_8c_a1d0310e531d73c6daff06a140cf69668}\label{backend_8c_a1d0310e531d73c6daff06a140cf69668} 
+\index{backend.c@{backend.c}!set\_highscore@{set\_highscore}}
+\index{set\_highscore@{set\_highscore}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{set\_highscore()}{set\_highscore()}}
+{\footnotesize\ttfamily void set\+\_\+highscore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Записывает рекорд в файл 
+
+Записывает текущий счёт в файл рекордов \Hypertarget{backend_8c_a28679f36e0161fe383b98b5a37bd89a2}\label{backend_8c_a28679f36e0161fe383b98b5a37bd89a2} 
+\index{backend.c@{backend.c}!set\_level@{set\_level}}
+\index{set\_level@{set\_level}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{set\_level()}{set\_level()}}
+{\footnotesize\ttfamily void set\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Обновляет уровень сложности 
+
+Повышает уровень при достижении порогового счёта \Hypertarget{backend_8c_a33a02ceab823cce3b238495e67a9bec3}\label{backend_8c_a33a02ceab823cce3b238495e67a9bec3} 
+\index{backend.c@{backend.c}!start\_game@{start\_game}}
+\index{start\_game@{start\_game}!backend.c@{backend.c}}
+\doxysubsubsection{\texorpdfstring{start\_game()}{start\_game()}}
+{\footnotesize\ttfamily void start\+\_\+game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*}}]{full\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Подготавливает новое игровое поле и начальные параметры 
+
+Инициализирует игру\+: выделяет память, сбрасывает счёт и уровень
+
+Происходит выделение памяти под игровое поле и фигуру;~\newline
+ Инициализируется дополнительная информация об игре 

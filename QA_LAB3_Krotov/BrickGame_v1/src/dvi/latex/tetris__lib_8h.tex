@@ -1,0 +1,200 @@
+\doxysection{Файл brick\+\_\+game/tetris/tetris\+\_\+lib.h}
+\hypertarget{tetris__lib_8h}{}\label{tetris__lib_8h}\index{brick\_game/tetris/tetris\_lib.h@{brick\_game/tetris/tetris\_lib.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include "{}defines.\+h"{}}\newline
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Основная информация о состоянии игры \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structFigure}{Figure}}
+\begin{DoxyCompactList}\small\item\em Описание текущей падающей фигуры \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structFullInfo}{Full\+Info}}
+\begin{DoxyCompactList}\small\item\em Полное состояние игры (единственный статический экземпляр) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9}{User\+Action\+\_\+t}} \{ \newline
+\mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9abd5f9c956752ce4dc707b4624b3a36f7}{Start}}
+, \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9adaba8aa0fcd8a87c25fec7d916c789e7}{Pause}}
+, \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9aaf166713f3d14b30bee8f0ad5a09c4cb}{Terminate}}
+, \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a9d4d8b0b72fc2659da772d761a3c5ecb}{Left}}
+, \newline
+\mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9ad48f7af8c070184f3774c8e85854eb66}{Right}}
+, \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a57a7edcbc04d6175683383cad5c3e0a2}{Up}}
+, \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9abcf8c79e9a5f5f9d606fb35645a0fb27}{Down}}
+, \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a3887649be5130f60dd3e7a6eb8e9f142}{Action}}
+ \}
+\begin{DoxyCompactList}\small\item\em Перечисление действий пользователя \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \{ \newline
+\mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8aceeab2f518193e483de72124b377dd60}{Begin}}
+, \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8aaa91a7c5a479ef5add68c761703fbaee}{Spawn}}
+, \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8ace38a563425aa1722759240461351f90}{Moving}}
+, \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a26c5a015eff4b706d87fbe8e16102a39}{Shifting}}
+, \newline
+\mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a5a7ee45908134ef42da0d15d31e092b7}{Attaching}}
+, \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8ae2724ba71a1a0daaa937dd3ac38e53e4}{Game\+Over}}
+, \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a54957cf47b2c20cda66ae848d2b3aacb}{Break}}
+ \}
+\begin{DoxyCompactList}\small\item\em Перечисление состояний конечного автомата \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{tetris__lib_8h_afd80eaffac13b53cba768dd746642e56}{get\+\_\+current\+\_\+state}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает указатель на статический объект состояния игры \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tetris__lib_8h_ab961f91e569a34b6984536633126257a}{user\+Input}} (\mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9}{User\+Action\+\_\+t}} action, bool hold)
+\begin{DoxyCompactList}\small\item\em Сохраняет пользовательский ввод в состоянии игры \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} \mbox{\hyperlink{tetris__lib_8h_afd5762991a9248a0b4192983fd786a8f}{update\+Current\+State}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает текущую игровую информацию \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tetris__lib_8h_a9747541b7368d12152583127a63e4af5}{sigact}} ()
+\begin{DoxyCompactList}\small\item\em Основная функция конечного автомата — обрабатывает текущее состояние \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Перечисления}
+\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8} 
+\index{tetris\_lib.h@{tetris\_lib.h}!State@{State}}
+\index{State@{State}!tetris\_lib.h@{tetris\_lib.h}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}}
+
+
+
+Перечисление состояний конечного автомата 
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Begin@{Begin}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Begin@{Begin}}}\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8aceeab2f518193e483de72124b377dd60}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8aceeab2f518193e483de72124b377dd60} 
+Begin&Начальное состояние — ожидание старта \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Spawn@{Spawn}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Spawn@{Spawn}}}\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8aaa91a7c5a479ef5add68c761703fbaee}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8aaa91a7c5a479ef5add68c761703fbaee} 
+Spawn&Создание новой фигуры \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Moving@{Moving}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Moving@{Moving}}}\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8ace38a563425aa1722759240461351f90}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8ace38a563425aa1722759240461351f90} 
+Moving&Обработка ввода и движение фигуры \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shifting@{Shifting}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Shifting@{Shifting}}}\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a26c5a015eff4b706d87fbe8e16102a39}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a26c5a015eff4b706d87fbe8e16102a39} 
+Shifting&Автоматическое падение фигуры по таймеру \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Attaching@{Attaching}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Attaching@{Attaching}}}\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a5a7ee45908134ef42da0d15d31e092b7}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a5a7ee45908134ef42da0d15d31e092b7} 
+Attaching&Присоединение фигуры к полю \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameOver@{GameOver}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!GameOver@{GameOver}}}\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8ae2724ba71a1a0daaa937dd3ac38e53e4}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8ae2724ba71a1a0daaa937dd3ac38e53e4} 
+Game\+Over&Конец игры \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Break@{Break}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Break@{Break}}}\Hypertarget{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a54957cf47b2c20cda66ae848d2b3aacb}\label{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8a54957cf47b2c20cda66ae848d2b3aacb} 
+Break&Пауза \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9} 
+\index{tetris\_lib.h@{tetris\_lib.h}!UserAction\_t@{UserAction\_t}}
+\index{UserAction\_t@{UserAction\_t}!tetris\_lib.h@{tetris\_lib.h}}
+\doxysubsubsection{\texorpdfstring{UserAction\_t}{UserAction\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9}{User\+Action\+\_\+t}}}
+
+
+
+Перечисление действий пользователя 
+
+Содержит все возможные действия, которые может совершить пользователь во время игры. \begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Start@{Start}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Start@{Start}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9abd5f9c956752ce4dc707b4624b3a36f7}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9abd5f9c956752ce4dc707b4624b3a36f7} 
+Start&Начать игру \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pause@{Pause}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Pause@{Pause}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9adaba8aa0fcd8a87c25fec7d916c789e7}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9adaba8aa0fcd8a87c25fec7d916c789e7} 
+Pause&Поставить на паузу / снять с паузы \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Terminate@{Terminate}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Terminate@{Terminate}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9aaf166713f3d14b30bee8f0ad5a09c4cb}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9aaf166713f3d14b30bee8f0ad5a09c4cb} 
+Terminate&Завершить игру \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Left@{Left}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a9d4d8b0b72fc2659da772d761a3c5ecb}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a9d4d8b0b72fc2659da772d761a3c5ecb} 
+Left&Движение влево \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Right@{Right}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9ad48f7af8c070184f3774c8e85854eb66}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9ad48f7af8c070184f3774c8e85854eb66} 
+Right&Движение вправо \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Up@{Up}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a57a7edcbc04d6175683383cad5c3e0a2}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a57a7edcbc04d6175683383cad5c3e0a2} 
+Up&Движение вверх (не используется) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Down@{Down}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9abcf8c79e9a5f5f9d606fb35645a0fb27}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9abcf8c79e9a5f5f9d606fb35645a0fb27} 
+Down&Движение вниз (ускорить падение) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Action@{Action}!tetris\_lib.h@{tetris\_lib.h}}\index{tetris\_lib.h@{tetris\_lib.h}!Action@{Action}}}\Hypertarget{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a3887649be5130f60dd3e7a6eb8e9f142}\label{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9a3887649be5130f60dd3e7a6eb8e9f142} 
+Action&Повернуть фигуру \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Функции}
+\Hypertarget{tetris__lib_8h_afd80eaffac13b53cba768dd746642e56}\label{tetris__lib_8h_afd80eaffac13b53cba768dd746642e56} 
+\index{tetris\_lib.h@{tetris\_lib.h}!get\_current\_state@{get\_current\_state}}
+\index{get\_current\_state@{get\_current\_state}!tetris\_lib.h@{tetris\_lib.h}}
+\doxysubsubsection{\texorpdfstring{get\_current\_state()}{get\_current\_state()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFullInfo}{Full\+Info}} \texorpdfstring{$\ast$}{*} get\+\_\+current\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает указатель на статический объект состояния игры 
+
+\begin{DoxyReturn}{Возвращает}
+Указатель на единственный экземпляр \doxylink{structFullInfo}{Full\+Info} 
+\end{DoxyReturn}
+\Hypertarget{tetris__lib_8h_a9747541b7368d12152583127a63e4af5}\label{tetris__lib_8h_a9747541b7368d12152583127a63e4af5} 
+\index{tetris\_lib.h@{tetris\_lib.h}!sigact@{sigact}}
+\index{sigact@{sigact}!tetris\_lib.h@{tetris\_lib.h}}
+\doxysubsubsection{\texorpdfstring{sigact()}{sigact()}}
+{\footnotesize\ttfamily void sigact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Основная функция конечного автомата — обрабатывает текущее состояние 
+
+Основная функция конечного автомата — обрабатывает текущее состояние
+
+Основной диспетчер конечного автомата
+
+Функция обработки текущего состояния игры;~\newline
+ Меняет состояние игры в зависимости от ввода пользователя \Hypertarget{tetris__lib_8h_afd5762991a9248a0b4192983fd786a8f}\label{tetris__lib_8h_afd5762991a9248a0b4192983fd786a8f} 
+\index{tetris\_lib.h@{tetris\_lib.h}!updateCurrentState@{updateCurrentState}}
+\index{updateCurrentState@{updateCurrentState}!tetris\_lib.h@{tetris\_lib.h}}
+\doxysubsubsection{\texorpdfstring{updateCurrentState()}{updateCurrentState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} update\+Current\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает текущую игровую информацию 
+
+\begin{DoxyReturn}{Возвращает}
+Копия структуры \doxylink{structGameInfo__t}{Game\+Info\+\_\+t} с текущим состоянием поля, счётом и уровнем 
+\end{DoxyReturn}
+\Hypertarget{tetris__lib_8h_ab961f91e569a34b6984536633126257a}\label{tetris__lib_8h_ab961f91e569a34b6984536633126257a} 
+\index{tetris\_lib.h@{tetris\_lib.h}!userInput@{userInput}}
+\index{userInput@{userInput}!tetris\_lib.h@{tetris\_lib.h}}
+\doxysubsubsection{\texorpdfstring{userInput()}{userInput()}}
+{\footnotesize\ttfamily void user\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9}{User\+Action\+\_\+t}}}]{action,  }\item[{bool}]{hold }\end{DoxyParamCaption})}
+
+
+
+Сохраняет пользовательский ввод в состоянии игры 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em action} & Действие пользователя \\
+\hline
+{\em hold} & Флаг удержания кнопки (true — кнопка нажата) \\
+\hline
+\end{DoxyParams}

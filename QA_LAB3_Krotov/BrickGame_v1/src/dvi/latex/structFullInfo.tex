@@ -1,0 +1,73 @@
+\doxysection{Структура Full\+Info}
+\hypertarget{structFullInfo}{}\label{structFullInfo}\index{FullInfo@{FullInfo}}
+
+
+Полное состояние игры (единственный статический экземпляр)  
+
+
+
+
+{\ttfamily \#include $<$tetris\+\_\+lib.\+h$>$}
+
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} \mbox{\hyperlink{structFullInfo_a022a72f99637c8d4d2cb412d9a1fe693}{game\+\_\+info}}
+\item 
+\mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{structFullInfo_a2d37bcfd97dd4afa51729df3ba186ef0}{state}}
+\item 
+\mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9}{User\+Action\+\_\+t}} \mbox{\hyperlink{structFullInfo_a05b6b3dcff941625a155f79c624126bf}{user\+\_\+action}}
+\item 
+\mbox{\hyperlink{structFigure}{Figure}} \mbox{\hyperlink{structFullInfo_aab13af65a3203942cf0e5f94d69e6130}{figure}}
+\item 
+int \mbox{\hyperlink{structFullInfo_aa8a78c9dd9212c9d5d332c2fe608b645}{button\+\_\+pressed}}
+\item 
+unsigned long long \mbox{\hyperlink{structFullInfo_a63185b9bcbd12098d0a1d8ba5fed01d4}{time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Полное состояние игры (единственный статический экземпляр) 
+
+\doxysubsection{Данные класса}
+\Hypertarget{structFullInfo_aa8a78c9dd9212c9d5d332c2fe608b645}\label{structFullInfo_aa8a78c9dd9212c9d5d332c2fe608b645} 
+\index{FullInfo@{FullInfo}!button\_pressed@{button\_pressed}}
+\index{button\_pressed@{button\_pressed}!FullInfo@{FullInfo}}
+\doxysubsubsection{\texorpdfstring{button\_pressed}{button\_pressed}}
+{\footnotesize\ttfamily int Full\+Info\+::button\+\_\+pressed}
+
+Флаг нажатия кнопки \Hypertarget{structFullInfo_aab13af65a3203942cf0e5f94d69e6130}\label{structFullInfo_aab13af65a3203942cf0e5f94d69e6130} 
+\index{FullInfo@{FullInfo}!figure@{figure}}
+\index{figure@{figure}!FullInfo@{FullInfo}}
+\doxysubsubsection{\texorpdfstring{figure}{figure}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFigure}{Figure}} Full\+Info\+::figure}
+
+Текущая падающая фигура \Hypertarget{structFullInfo_a022a72f99637c8d4d2cb412d9a1fe693}\label{structFullInfo_a022a72f99637c8d4d2cb412d9a1fe693} 
+\index{FullInfo@{FullInfo}!game\_info@{game\_info}}
+\index{game\_info@{game\_info}!FullInfo@{FullInfo}}
+\doxysubsubsection{\texorpdfstring{game\_info}{game\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} Full\+Info\+::game\+\_\+info}
+
+Игровая информация для GUI \Hypertarget{structFullInfo_a2d37bcfd97dd4afa51729df3ba186ef0}\label{structFullInfo_a2d37bcfd97dd4afa51729df3ba186ef0} 
+\index{FullInfo@{FullInfo}!state@{state}}
+\index{state@{state}!FullInfo@{FullInfo}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tetris__lib_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} Full\+Info\+::state}
+
+Текущее состояние FSM \Hypertarget{structFullInfo_a63185b9bcbd12098d0a1d8ba5fed01d4}\label{structFullInfo_a63185b9bcbd12098d0a1d8ba5fed01d4} 
+\index{FullInfo@{FullInfo}!time@{time}}
+\index{time@{time}!FullInfo@{FullInfo}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily unsigned long long Full\+Info\+::time}
+
+Временная метка для таймера падения (мс) \Hypertarget{structFullInfo_a05b6b3dcff941625a155f79c624126bf}\label{structFullInfo_a05b6b3dcff941625a155f79c624126bf} 
+\index{FullInfo@{FullInfo}!user\_action@{user\_action}}
+\index{user\_action@{user\_action}!FullInfo@{FullInfo}}
+\doxysubsubsection{\texorpdfstring{user\_action}{user\_action}}
+{\footnotesize\ttfamily \mbox{\hyperlink{tetris__lib_8h_a7ba289d7b97db30e0b7041ca2cef75a9}{User\+Action\+\_\+t}} Full\+Info\+::user\+\_\+action}
+
+Последнее действие пользователя 
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+brick\+\_\+game/tetris/\mbox{\hyperlink{tetris__lib_8h}{tetris\+\_\+lib.\+h}}\end{DoxyCompactItemize}

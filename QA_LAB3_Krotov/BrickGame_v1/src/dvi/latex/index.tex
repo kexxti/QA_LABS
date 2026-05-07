@@ -1,0 +1,96 @@
+\chapter{Brick\+Game — Тетрис}
+\hypertarget{index}{}\label{index}\index{BrickGame — Тетрис@{BrickGame — Тетрис}}
+\hypertarget{index_intro_sec}{}\doxysection{\texorpdfstring{Описание проекта}{Описание проекта}}\label{index_intro_sec}
+Реализация классической игры «Тетрис» на языке программирования C с использованием терминального интерфейса ncurses и конечного автомата (FSM). Те́трис (производное от «тетрамино» и «теннис») — компьютерная игра, изобретённая и разработанная советским программистом Алексеем Пажитновым. Игра была выпущена в 1985 году — в это время Пажитнов работал в Вычислительном центре Академии наук СССР. by Wikipedia
+
+\hypertarget{index_struct_sec}{}\doxysection{\texorpdfstring{Граф структур данных}{Граф структур данных}}\label{index_struct_sec}
+Центральной структурой является {\ttfamily \doxylink{structFullInfo}{Full\+Info}}, которая содержит в себе {\ttfamily \doxylink{structGameInfo__t}{Game\+Info\+\_\+t}} (состояние поля), {\ttfamily \doxylink{structFigure}{Figure}} (текущая фигура), а также использует перечисления {\ttfamily State} (состояние FSM) и {\ttfamily User\+Action\+\_\+t} (ввод).
+
+На рисунке ниже показан граф связей между основными структурами и перечислениями проекта.
+
+\hypertarget{index_arch_sec}{}\doxysection{\texorpdfstring{Архитектура}{Архитектура}}\label{index_arch_sec}
+Проект разделён на три независимых модуля\+:
+\begin{DoxyItemize}
+\item {\bfseries{Библиотека игровой логики}} (brick\+\_\+game/tetris) — вся механика игры, конечный автомат, работа с фигурами.
+\item {\bfseries{Графический интерфейс}} (gui/cli) — отрисовка игрового поля через ncurses.
+\item {\bfseries{Точка входа}} (\doxylink{main_8c}{main.\+c}) — основной игровой цикл, обработка ввода.
+\end{DoxyItemize}\hypertarget{index_fsm_sec}{}\doxysection{\texorpdfstring{Конечный автомат (\+FSM)}{Конечный автомат (FSM)}}\label{index_fsm_sec}
+Игра управляется конечным автоматом с 7 состояниями\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Состояние   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Описание    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Состояние   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Описание    }\\\cline{1-2}
+\endhead
+Begin   &Ожидание нажатия кнопки «Старт»    \\\cline{1-2}
+Spawn   &Создание новой фигуры    \\\cline{1-2}
+Moving   &Обработка ввода, движение фигуры    \\\cline{1-2}
+Shifting   &Автоматическое падение фигуры    \\\cline{1-2}
+Attaching   &Присоединение фигуры к полю    \\\cline{1-2}
+Game\+Over   &Конец игры    \\\cline{1-2}
+Break   &Пауза   \\\cline{1-2}
+\end{longtabu}
+
+
+\hypertarget{index_score_sec}{}\doxysection{\texorpdfstring{Система очков}{Система очков}}\label{index_score_sec}
+Количество очков зависит от числа одновременно заполненных строк\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Строк   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Очков    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Строк   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Очков    }\\\cline{1-2}
+\endhead
+1   &100    \\\cline{1-2}
+2   &300    \\\cline{1-2}
+3   &700    \\\cline{1-2}
+4   &1500   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{index_formula_sec}{}\doxysection{\texorpdfstring{Формулы}{Формулы}}\label{index_formula_sec}
+{\bfseries{Скорость падения фигуры}} (в миллисекундах) вычисляется по формуле\+:
+
+\[
+  t_{fall} = \frac{1000}{level}
+\]
+
+где $ level $ — текущий уровень игры (от 1 до 10).
+
+{\bfseries{Повышение уровня}} происходит при выполнении условия\+:
+
+\[
+  score > level \times 600
+\]
+
+{\bfseries{Алгоритм вращения фигуры}} — поворот матрицы N×N на 90° по часовой стрелке\+:
+
+\[
+  result[j][N-i-1] = matrix[i][j], \quad i,j \in [0, N)
+\]\hypertarget{index_controls_sec}{}\doxysection{\texorpdfstring{Управление}{Управление}}\label{index_controls_sec}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Клавиша   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Действие    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Клавиша   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Действие    }\\\cline{1-2}
+\endhead
+{\ttfamily e}   &Начать игру    \\\cline{1-2}
+{\ttfamily q}   &Выйти    \\\cline{1-2}
+{\ttfamily ←} {\ttfamily →}   &Движение    \\\cline{1-2}
+{\ttfamily ↓}   &Ускорить падение    \\\cline{1-2}
+{\ttfamily Пробел}   &Повернуть фигуру    \\\cline{1-2}
+{\ttfamily Esc}   &Пауза / Продолжить   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{index_pieces_sec}{}\doxysection{\texorpdfstring{Фигуры Тетрис}{Фигуры Тетрис}}\label{index_pieces_sec}
+ 

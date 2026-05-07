@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BrickGame: Файл brick_game/tetris/tetris_lib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BrickGame<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Реализация игры «Тетрис» на языке программирования С.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2ee2de302366a9522113dfc9d3962873.html">brick_game</a></li><li class="navelem"><a class="el" href="dir_a27466d1e2cff2d3a32cbaf29900b661.html">tetris</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#enum-members">Перечисления</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл tetris_lib.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
+</div>
+<p><a href="tetris__lib_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGameInfo__t.html">GameInfo_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основная информация о состоянии игры  <a href="structGameInfo__t.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFigure.html">Figure</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Описание текущей падающей фигуры  <a href="structFigure.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFullInfo.html">FullInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Полное состояние игры (единственный статический экземпляр)  <a href="structFullInfo.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a7ba289d7b97db30e0b7041ca2cef75a9" id="r_a7ba289d7b97db30e0b7041ca2cef75a9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9">UserAction_t</a> { <br />
+&#160;&#160;<a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9abd5f9c956752ce4dc707b4624b3a36f7">Start</a>
+, <a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9adaba8aa0fcd8a87c25fec7d916c789e7">Pause</a>
+, <a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9aaf166713f3d14b30bee8f0ad5a09c4cb">Terminate</a>
+, <a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9a9d4d8b0b72fc2659da772d761a3c5ecb">Left</a>
+, <br />
+&#160;&#160;<a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9ad48f7af8c070184f3774c8e85854eb66">Right</a>
+, <a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9a57a7edcbc04d6175683383cad5c3e0a2">Up</a>
+, <a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9abcf8c79e9a5f5f9d606fb35645a0fb27">Down</a>
+, <a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9a3887649be5130f60dd3e7a6eb8e9f142">Action</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a7ba289d7b97db30e0b7041ca2cef75a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перечисление действий пользователя  <a href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7ba289d7b97db30e0b7041ca2cef75a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d74787dedbc4e11c1ab15bf487e61f8" id="r_a5d74787dedbc4e11c1ab15bf487e61f8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a> { <br />
+&#160;&#160;<a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8aceeab2f518193e483de72124b377dd60">Begin</a>
+, <a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8aaa91a7c5a479ef5add68c761703fbaee">Spawn</a>
+, <a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8ace38a563425aa1722759240461351f90">Moving</a>
+, <a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a26c5a015eff4b706d87fbe8e16102a39">Shifting</a>
+, <br />
+&#160;&#160;<a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a5a7ee45908134ef42da0d15d31e092b7">Attaching</a>
+, <a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8ae2724ba71a1a0daaa937dd3ac38e53e4">GameOver</a>
+, <a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a54957cf47b2c20cda66ae848d2b3aacb">Break</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перечисление состояний конечного автомата  <a href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:afd80eaffac13b53cba768dd746642e56" id="r_afd80eaffac13b53cba768dd746642e56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFullInfo.html">FullInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris__lib_8h.html#afd80eaffac13b53cba768dd746642e56">get_current_state</a> ()</td></tr>
+<tr class="memdesc:afd80eaffac13b53cba768dd746642e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает указатель на статический объект состояния игры  <br /></td></tr>
+<tr class="separator:afd80eaffac13b53cba768dd746642e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab961f91e569a34b6984536633126257a" id="r_ab961f91e569a34b6984536633126257a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris__lib_8h.html#ab961f91e569a34b6984536633126257a">userInput</a> (<a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9">UserAction_t</a> action, bool hold)</td></tr>
+<tr class="memdesc:ab961f91e569a34b6984536633126257a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет пользовательский ввод в состоянии игры  <br /></td></tr>
+<tr class="separator:ab961f91e569a34b6984536633126257a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5762991a9248a0b4192983fd786a8f" id="r_afd5762991a9248a0b4192983fd786a8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGameInfo__t.html">GameInfo_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris__lib_8h.html#afd5762991a9248a0b4192983fd786a8f">updateCurrentState</a> ()</td></tr>
+<tr class="memdesc:afd5762991a9248a0b4192983fd786a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает текущую игровую информацию  <br /></td></tr>
+<tr class="separator:afd5762991a9248a0b4192983fd786a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9747541b7368d12152583127a63e4af5" id="r_a9747541b7368d12152583127a63e4af5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tetris__lib_8h.html#a9747541b7368d12152583127a63e4af5">sigact</a> ()</td></tr>
+<tr class="memdesc:a9747541b7368d12152583127a63e4af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основная функция конечного автомата — обрабатывает текущее состояние  <br /></td></tr>
+<tr class="separator:a9747541b7368d12152583127a63e4af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a5d74787dedbc4e11c1ab15bf487e61f8" name="a5d74787dedbc4e11c1ab15bf487e61f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d74787dedbc4e11c1ab15bf487e61f8">&#9670;&#160;</a></span>State</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="tetris__lib_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перечисление состояний конечного автомата </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8aceeab2f518193e483de72124b377dd60" name="a5d74787dedbc4e11c1ab15bf487e61f8aceeab2f518193e483de72124b377dd60"></a>Begin&#160;</td><td class="fielddoc"><p>Начальное состояние — ожидание старта </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8aaa91a7c5a479ef5add68c761703fbaee" name="a5d74787dedbc4e11c1ab15bf487e61f8aaa91a7c5a479ef5add68c761703fbaee"></a>Spawn&#160;</td><td class="fielddoc"><p>Создание новой фигуры </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8ace38a563425aa1722759240461351f90" name="a5d74787dedbc4e11c1ab15bf487e61f8ace38a563425aa1722759240461351f90"></a>Moving&#160;</td><td class="fielddoc"><p>Обработка ввода и движение фигуры </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a26c5a015eff4b706d87fbe8e16102a39" name="a5d74787dedbc4e11c1ab15bf487e61f8a26c5a015eff4b706d87fbe8e16102a39"></a>Shifting&#160;</td><td class="fielddoc"><p>Автоматическое падение фигуры по таймеру </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a5a7ee45908134ef42da0d15d31e092b7" name="a5d74787dedbc4e11c1ab15bf487e61f8a5a7ee45908134ef42da0d15d31e092b7"></a>Attaching&#160;</td><td class="fielddoc"><p>Присоединение фигуры к полю </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8ae2724ba71a1a0daaa937dd3ac38e53e4" name="a5d74787dedbc4e11c1ab15bf487e61f8ae2724ba71a1a0daaa937dd3ac38e53e4"></a>GameOver&#160;</td><td class="fielddoc"><p>Конец игры </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a54957cf47b2c20cda66ae848d2b3aacb" name="a5d74787dedbc4e11c1ab15bf487e61f8a54957cf47b2c20cda66ae848d2b3aacb"></a>Break&#160;</td><td class="fielddoc"><p>Пауза </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a7ba289d7b97db30e0b7041ca2cef75a9" name="a7ba289d7b97db30e0b7041ca2cef75a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ba289d7b97db30e0b7041ca2cef75a9">&#9670;&#160;</a></span>UserAction_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9">UserAction_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перечисление действий пользователя </p>
+<p>Содержит все возможные действия, которые может совершить пользователь во время игры. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9abd5f9c956752ce4dc707b4624b3a36f7" name="a7ba289d7b97db30e0b7041ca2cef75a9abd5f9c956752ce4dc707b4624b3a36f7"></a>Start&#160;</td><td class="fielddoc"><p>Начать игру </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9adaba8aa0fcd8a87c25fec7d916c789e7" name="a7ba289d7b97db30e0b7041ca2cef75a9adaba8aa0fcd8a87c25fec7d916c789e7"></a>Pause&#160;</td><td class="fielddoc"><p>Поставить на паузу / снять с паузы </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9aaf166713f3d14b30bee8f0ad5a09c4cb" name="a7ba289d7b97db30e0b7041ca2cef75a9aaf166713f3d14b30bee8f0ad5a09c4cb"></a>Terminate&#160;</td><td class="fielddoc"><p>Завершить игру </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9a9d4d8b0b72fc2659da772d761a3c5ecb" name="a7ba289d7b97db30e0b7041ca2cef75a9a9d4d8b0b72fc2659da772d761a3c5ecb"></a>Left&#160;</td><td class="fielddoc"><p>Движение влево </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9ad48f7af8c070184f3774c8e85854eb66" name="a7ba289d7b97db30e0b7041ca2cef75a9ad48f7af8c070184f3774c8e85854eb66"></a>Right&#160;</td><td class="fielddoc"><p>Движение вправо </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9a57a7edcbc04d6175683383cad5c3e0a2" name="a7ba289d7b97db30e0b7041ca2cef75a9a57a7edcbc04d6175683383cad5c3e0a2"></a>Up&#160;</td><td class="fielddoc"><p>Движение вверх (не используется) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9abcf8c79e9a5f5f9d606fb35645a0fb27" name="a7ba289d7b97db30e0b7041ca2cef75a9abcf8c79e9a5f5f9d606fb35645a0fb27"></a>Down&#160;</td><td class="fielddoc"><p>Движение вниз (ускорить падение) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7ba289d7b97db30e0b7041ca2cef75a9a3887649be5130f60dd3e7a6eb8e9f142" name="a7ba289d7b97db30e0b7041ca2cef75a9a3887649be5130f60dd3e7a6eb8e9f142"></a>Action&#160;</td><td class="fielddoc"><p>Повернуть фигуру </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="afd80eaffac13b53cba768dd746642e56" name="afd80eaffac13b53cba768dd746642e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd80eaffac13b53cba768dd746642e56">&#9670;&#160;</a></span>get_current_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFullInfo.html">FullInfo</a> * get_current_state </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает указатель на статический объект состояния игры </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Указатель на единственный экземпляр <a class="el" href="structFullInfo.html" title="Полное состояние игры (единственный статический экземпляр)">FullInfo</a> </dd></dl>
+
+</div>
+</div>
+<a id="a9747541b7368d12152583127a63e4af5" name="a9747541b7368d12152583127a63e4af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9747541b7368d12152583127a63e4af5">&#9670;&#160;</a></span>sigact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sigact </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Основная функция конечного автомата — обрабатывает текущее состояние </p>
+<p>Основная функция конечного автомата — обрабатывает текущее состояние</p>
+<p>Основной диспетчер конечного автомата</p>
+<p>Функция обработки текущего состояния игры;<br  />
+ Меняет состояние игры в зависимости от ввода пользователя </p>
+
+</div>
+</div>
+<a id="afd5762991a9248a0b4192983fd786a8f" name="afd5762991a9248a0b4192983fd786a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd5762991a9248a0b4192983fd786a8f">&#9670;&#160;</a></span>updateCurrentState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGameInfo__t.html">GameInfo_t</a> updateCurrentState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает текущую игровую информацию </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Копия структуры <a class="el" href="structGameInfo__t.html" title="Основная информация о состоянии игры">GameInfo_t</a> с текущим состоянием поля, счётом и уровнем </dd></dl>
+
+</div>
+</div>
+<a id="ab961f91e569a34b6984536633126257a" name="ab961f91e569a34b6984536633126257a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab961f91e569a34b6984536633126257a">&#9670;&#160;</a></span>userInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void userInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="tetris__lib_8h.html#a7ba289d7b97db30e0b7041ca2cef75a9">UserAction_t</a>&#160;</td>
+          <td class="paramname"><em>action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>hold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сохраняет пользовательский ввод в состоянии игры </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">action</td><td>Действие пользователя </td></tr>
+    <tr><td class="paramname">hold</td><td>Флаг удержания кнопки (true — кнопка нажата) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

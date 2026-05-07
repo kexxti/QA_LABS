@@ -1,0 +1,94 @@
+digraph structs {
+    graph [
+        rankdir=TB
+        fontname="Arial"
+        fontsize=12
+        bgcolor="#FAFAFA"
+        pad=0.5
+        splines=ortho
+    ]
+    node [
+        shape=record
+        fontname="Arial"
+        fontsize=11
+        style=filled
+    ]
+    edge [
+        fontname="Arial"
+        fontsize=10
+        color="#555555"
+    ]
+
+    FullInfo [
+        fillcolor="#D6EAF8"
+        color="#2980B9"
+        label="{FullInfo|
+            + game_info : GameInfo_t\l
+            + state : State\l
+            + user_action : UserAction_t\l
+            + figure : Figure\l
+            + button_pressed : int\l
+            + time : unsigned long long\l
+        }"
+    ]
+
+    GameInfo_t [
+        fillcolor="#D5F5E3"
+        color="#27AE60"
+        label="{GameInfo_t|
+            + field : int**\l
+            + next : int**\l
+            + score : int\l
+            + high_score : int\l
+            + level : int\l
+            + speed : int\l
+            + pause : int\l
+        }"
+    ]
+
+    Figure [
+        fillcolor="#FDEBD0"
+        color="#E67E22"
+        label="{Figure|
+            + start_pos[2] : int\l
+            + blocks_pos[4][2] : int\l
+            + code_rotate : int\l
+        }"
+    ]
+
+    State [
+        fillcolor="#F9EBEA"
+        color="#C0392B"
+        shape=record
+        label="{«enum» State|
+            Begin\l
+            Spawn\l
+            Moving\l
+            Shifting\l
+            Attaching\l
+            GameOver\l
+            Break\l
+        }"
+    ]
+
+    UserAction_t [
+        fillcolor="#F5EEF8"
+        color="#8E44AD"
+        shape=record
+        label="{«enum» UserAction_t|
+            Start\l
+            Pause\l
+            Terminate\l
+            Left\l
+            Right\l
+            Up\l
+            Down\l
+            Action\l
+        }"
+    ]
+
+    FullInfo -> GameInfo_t  [label=" содержит" arrowhead=diamond color="#2980B9"]
+    FullInfo -> Figure      [label=" содержит" arrowhead=diamond color="#E67E22"]
+    FullInfo -> State       [label=" использует" arrowhead=open style=dashed color="#C0392B"]
+    FullInfo -> UserAction_t [label=" использует" arrowhead=open style=dashed color="#8E44AD"]
+}

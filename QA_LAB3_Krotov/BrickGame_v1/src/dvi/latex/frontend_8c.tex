@@ -1,0 +1,111 @@
+\doxysection{Файл gui/cli/frontend.c}
+\hypertarget{frontend_8c}{}\label{frontend_8c}\index{gui/cli/frontend.c@{gui/cli/frontend.c}}
+{\ttfamily \#include "{}frontend.\+h"{}}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{frontend_8c_a60797a611bb1e3589898d61f2c258c77}{fill\+\_\+window}} (\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} game\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Основная функция отрисовки \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frontend_8c_a51d9f46e76895da0551ede9e9dd254c0}{print\+\_\+\+Figure}} ()
+\begin{DoxyCompactList}\small\item\em Отрисовка фигуры \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frontend_8c_ac66430f47c5eff733711832e7f88b45e}{print\+\_\+board\+Game}} (\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} game\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Отрисовка игрового поля \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frontend_8c_a740e8695b9d7b78d02d8b99d042b560f}{print\+\_\+board\+Info}} (\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}} game\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Отрисовка дополнительной информации \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frontend_8c_af86d0bf5b84953f3c6eaae16585aba59}{print\+\_\+borders}} ()
+\begin{DoxyCompactList}\small\item\em Отрисовка границ игрового поля \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frontend_8c_af7c070a6fe3f53671923ff5b963aeb8b}{print\+\_\+pause\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Отрисовка паузы \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frontend_8c_a67729576b45cba5239f9145f111a0476}{print\+\_\+game\+Over}} ()
+\begin{DoxyCompactList}\small\item\em Отрисовка информации об окончании игры \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frontend_8c_abb085dfa51988c92c1afe0e0812f47ee}{print\+\_\+start\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Отрисовка начальной информации \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{frontend_8c_a60797a611bb1e3589898d61f2c258c77}\label{frontend_8c_a60797a611bb1e3589898d61f2c258c77} 
+\index{frontend.c@{frontend.c}!fill\_window@{fill\_window}}
+\index{fill\_window@{fill\_window}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{fill\_window()}{fill\_window()}}
+{\footnotesize\ttfamily void fill\+\_\+window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}}}]{game\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Основная функция отрисовки 
+
+Главная функция отрисовки — вызывает все вспомогательные функции GUI.
+
+Отрисовывается границы игрового поля;~\newline
+ Отрисовывается дополнительная информация (уровень, кол-\/во очков и т.\+д.);~\newline
+ В зависимости от состояния отрисовывается начало, конец или пауза;~\newline
+ После начала отрисовывается фигура и игровое поле \Hypertarget{frontend_8c_ac66430f47c5eff733711832e7f88b45e}\label{frontend_8c_ac66430f47c5eff733711832e7f88b45e} 
+\index{frontend.c@{frontend.c}!print\_boardGame@{print\_boardGame}}
+\index{print\_boardGame@{print\_boardGame}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{print\_boardGame()}{print\_boardGame()}}
+{\footnotesize\ttfamily void print\+\_\+board\+Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}}}]{game\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Отрисовка игрового поля 
+
+Отрисовывает игровое поле HEIGHT×\+WIDTH с зафиксированными блоками \Hypertarget{frontend_8c_a740e8695b9d7b78d02d8b99d042b560f}\label{frontend_8c_a740e8695b9d7b78d02d8b99d042b560f} 
+\index{frontend.c@{frontend.c}!print\_boardInfo@{print\_boardInfo}}
+\index{print\_boardInfo@{print\_boardInfo}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{print\_boardInfo()}{print\_boardInfo()}}
+{\footnotesize\ttfamily void print\+\_\+board\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameInfo__t}{Game\+Info\+\_\+t}}}]{game\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Отрисовка дополнительной информации 
+
+Отрисовывает информационную панель\+: рекорд, счёт, уровень, следующая фигура \Hypertarget{frontend_8c_af86d0bf5b84953f3c6eaae16585aba59}\label{frontend_8c_af86d0bf5b84953f3c6eaae16585aba59} 
+\index{frontend.c@{frontend.c}!print\_borders@{print\_borders}}
+\index{print\_borders@{print\_borders}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{print\_borders()}{print\_borders()}}
+{\footnotesize\ttfamily void print\+\_\+borders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Отрисовка границ игрового поля 
+
+Отрисовывает рамку игрового поля \Hypertarget{frontend_8c_a51d9f46e76895da0551ede9e9dd254c0}\label{frontend_8c_a51d9f46e76895da0551ede9e9dd254c0} 
+\index{frontend.c@{frontend.c}!print\_Figure@{print\_Figure}}
+\index{print\_Figure@{print\_Figure}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{print\_Figure()}{print\_Figure()}}
+{\footnotesize\ttfamily void print\+\_\+\+Figure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Отрисовка фигуры 
+
+Отрисовывает текущую падающую фигуру на игровом поле \Hypertarget{frontend_8c_a67729576b45cba5239f9145f111a0476}\label{frontend_8c_a67729576b45cba5239f9145f111a0476} 
+\index{frontend.c@{frontend.c}!print\_gameOver@{print\_gameOver}}
+\index{print\_gameOver@{print\_gameOver}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{print\_gameOver()}{print\_gameOver()}}
+{\footnotesize\ttfamily void print\+\_\+game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Отрисовка информации об окончании игры 
+
+Отображает экран конца игры \Hypertarget{frontend_8c_af7c070a6fe3f53671923ff5b963aeb8b}\label{frontend_8c_af7c070a6fe3f53671923ff5b963aeb8b} 
+\index{frontend.c@{frontend.c}!print\_pauseInfo@{print\_pauseInfo}}
+\index{print\_pauseInfo@{print\_pauseInfo}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{print\_pauseInfo()}{print\_pauseInfo()}}
+{\footnotesize\ttfamily void print\+\_\+pause\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Отрисовка паузы 
+
+Отображает экран паузы с подсказками по управлению \Hypertarget{frontend_8c_abb085dfa51988c92c1afe0e0812f47ee}\label{frontend_8c_abb085dfa51988c92c1afe0e0812f47ee} 
+\index{frontend.c@{frontend.c}!print\_startGame@{print\_startGame}}
+\index{print\_startGame@{print\_startGame}!frontend.c@{frontend.c}}
+\doxysubsubsection{\texorpdfstring{print\_startGame()}{print\_startGame()}}
+{\footnotesize\ttfamily void print\+\_\+start\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Отрисовка начальной информации 
+
+Отображает стартовый экран с подсказками по управлению 

@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BrickGame: Файл gui/cli/frontend.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BrickGame<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Реализация игры «Тетрис» на языке программирования С.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_11bc0974ce736ce9a6fadebbeb7a8314.html">gui</a></li><li class="navelem"><a class="el" href="dir_eb72031c353f9ecdf51ac453b26ef86a.html">cli</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл frontend.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="frontend_8h_source.html">frontend.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a60797a611bb1e3589898d61f2c258c77" id="r_a60797a611bb1e3589898d61f2c258c77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#a60797a611bb1e3589898d61f2c258c77">fill_window</a> (<a class="el" href="structGameInfo__t.html">GameInfo_t</a> game_info)</td></tr>
+<tr class="memdesc:a60797a611bb1e3589898d61f2c258c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основная функция отрисовки  <br /></td></tr>
+<tr class="separator:a60797a611bb1e3589898d61f2c258c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d9f46e76895da0551ede9e9dd254c0" id="r_a51d9f46e76895da0551ede9e9dd254c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#a51d9f46e76895da0551ede9e9dd254c0">print_Figure</a> ()</td></tr>
+<tr class="memdesc:a51d9f46e76895da0551ede9e9dd254c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отрисовка фигуры  <br /></td></tr>
+<tr class="separator:a51d9f46e76895da0551ede9e9dd254c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac66430f47c5eff733711832e7f88b45e" id="r_ac66430f47c5eff733711832e7f88b45e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#ac66430f47c5eff733711832e7f88b45e">print_boardGame</a> (<a class="el" href="structGameInfo__t.html">GameInfo_t</a> game_info)</td></tr>
+<tr class="memdesc:ac66430f47c5eff733711832e7f88b45e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отрисовка игрового поля  <br /></td></tr>
+<tr class="separator:ac66430f47c5eff733711832e7f88b45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740e8695b9d7b78d02d8b99d042b560f" id="r_a740e8695b9d7b78d02d8b99d042b560f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#a740e8695b9d7b78d02d8b99d042b560f">print_boardInfo</a> (<a class="el" href="structGameInfo__t.html">GameInfo_t</a> game_info)</td></tr>
+<tr class="memdesc:a740e8695b9d7b78d02d8b99d042b560f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отрисовка дополнительной информации  <br /></td></tr>
+<tr class="separator:a740e8695b9d7b78d02d8b99d042b560f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86d0bf5b84953f3c6eaae16585aba59" id="r_af86d0bf5b84953f3c6eaae16585aba59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#af86d0bf5b84953f3c6eaae16585aba59">print_borders</a> ()</td></tr>
+<tr class="memdesc:af86d0bf5b84953f3c6eaae16585aba59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отрисовка границ игрового поля  <br /></td></tr>
+<tr class="separator:af86d0bf5b84953f3c6eaae16585aba59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c070a6fe3f53671923ff5b963aeb8b" id="r_af7c070a6fe3f53671923ff5b963aeb8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#af7c070a6fe3f53671923ff5b963aeb8b">print_pauseInfo</a> ()</td></tr>
+<tr class="memdesc:af7c070a6fe3f53671923ff5b963aeb8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отрисовка паузы  <br /></td></tr>
+<tr class="separator:af7c070a6fe3f53671923ff5b963aeb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67729576b45cba5239f9145f111a0476" id="r_a67729576b45cba5239f9145f111a0476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#a67729576b45cba5239f9145f111a0476">print_gameOver</a> ()</td></tr>
+<tr class="memdesc:a67729576b45cba5239f9145f111a0476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отрисовка информации об окончании игры  <br /></td></tr>
+<tr class="separator:a67729576b45cba5239f9145f111a0476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb085dfa51988c92c1afe0e0812f47ee" id="r_abb085dfa51988c92c1afe0e0812f47ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="frontend_8c.html#abb085dfa51988c92c1afe0e0812f47ee">print_startGame</a> ()</td></tr>
+<tr class="memdesc:abb085dfa51988c92c1afe0e0812f47ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отрисовка начальной информации  <br /></td></tr>
+<tr class="separator:abb085dfa51988c92c1afe0e0812f47ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a60797a611bb1e3589898d61f2c258c77" name="a60797a611bb1e3589898d61f2c258c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60797a611bb1e3589898d61f2c258c77">&#9670;&#160;</a></span>fill_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fill_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGameInfo__t.html">GameInfo_t</a>&#160;</td>
+          <td class="paramname"><em>game_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Основная функция отрисовки </p>
+<p>Главная функция отрисовки — вызывает все вспомогательные функции GUI.</p>
+<p>Отрисовывается границы игрового поля;<br  />
+ Отрисовывается дополнительная информация (уровень, кол-во очков и т.д.);<br  />
+ В зависимости от состояния отрисовывается начало, конец или пауза;<br  />
+ После начала отрисовывается фигура и игровое поле </p>
+
+</div>
+</div>
+<a id="ac66430f47c5eff733711832e7f88b45e" name="ac66430f47c5eff733711832e7f88b45e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac66430f47c5eff733711832e7f88b45e">&#9670;&#160;</a></span>print_boardGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_boardGame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGameInfo__t.html">GameInfo_t</a>&#160;</td>
+          <td class="paramname"><em>game_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отрисовка игрового поля </p>
+<p>Отрисовывает игровое поле HEIGHT×WIDTH с зафиксированными блоками </p>
+
+</div>
+</div>
+<a id="a740e8695b9d7b78d02d8b99d042b560f" name="a740e8695b9d7b78d02d8b99d042b560f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740e8695b9d7b78d02d8b99d042b560f">&#9670;&#160;</a></span>print_boardInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_boardInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGameInfo__t.html">GameInfo_t</a>&#160;</td>
+          <td class="paramname"><em>game_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отрисовка дополнительной информации </p>
+<p>Отрисовывает информационную панель: рекорд, счёт, уровень, следующая фигура </p>
+
+</div>
+</div>
+<a id="af86d0bf5b84953f3c6eaae16585aba59" name="af86d0bf5b84953f3c6eaae16585aba59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86d0bf5b84953f3c6eaae16585aba59">&#9670;&#160;</a></span>print_borders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_borders </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отрисовка границ игрового поля </p>
+<p>Отрисовывает рамку игрового поля </p>
+
+</div>
+</div>
+<a id="a51d9f46e76895da0551ede9e9dd254c0" name="a51d9f46e76895da0551ede9e9dd254c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51d9f46e76895da0551ede9e9dd254c0">&#9670;&#160;</a></span>print_Figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_Figure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отрисовка фигуры </p>
+<p>Отрисовывает текущую падающую фигуру на игровом поле </p>
+
+</div>
+</div>
+<a id="a67729576b45cba5239f9145f111a0476" name="a67729576b45cba5239f9145f111a0476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67729576b45cba5239f9145f111a0476">&#9670;&#160;</a></span>print_gameOver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_gameOver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отрисовка информации об окончании игры </p>
+<p>Отображает экран конца игры </p>
+
+</div>
+</div>
+<a id="af7c070a6fe3f53671923ff5b963aeb8b" name="af7c070a6fe3f53671923ff5b963aeb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c070a6fe3f53671923ff5b963aeb8b">&#9670;&#160;</a></span>print_pauseInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_pauseInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отрисовка паузы </p>
+<p>Отображает экран паузы с подсказками по управлению </p>
+
+</div>
+</div>
+<a id="abb085dfa51988c92c1afe0e0812f47ee" name="abb085dfa51988c92c1afe0e0812f47ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb085dfa51988c92c1afe0e0812f47ee">&#9670;&#160;</a></span>print_startGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_startGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отрисовка начальной информации </p>
+<p>Отображает стартовый экран с подсказками по управлению </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

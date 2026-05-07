@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BrickGame: BrickGame — Тетрис</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BrickGame<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Реализация игры «Тетрис» на языке программирования С.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">BrickGame — Тетрис </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Описание проекта</h1>
+<p>Реализация классической игры «Тетрис» на языке программирования C с использованием терминального интерфейса ncurses и конечного автомата (FSM). Те́трис (производное от «тетрамино» и «теннис») — компьютерная игра, изобретённая и разработанная советским программистом Алексеем Пажитновым. Игра была выпущена в 1985 году — в это время Пажитнов работал в Вычислительном центре Академии наук СССР. by Wikipedia</p>
+<div class="image">
+<img src="tetris-game.png" alt="" width="400px"/>
+<div class="caption">
+Игровой процесс Тетрис</div></div>
+<h1><a class="anchor" id="struct_sec"></a>
+Граф структур данных</h1>
+<p>Центральной структурой является <code><a class="el" href="structFullInfo.html" title="Полное состояние игры (единственный статический экземпляр)">FullInfo</a></code>, которая содержит в себе <code><a class="el" href="structGameInfo__t.html" title="Основная информация о состоянии игры">GameInfo_t</a></code> (состояние поля), <code><a class="el" href="structFigure.html" title="Описание текущей падающей фигуры">Figure</a></code> (текущая фигура), а также использует перечисления <code>State</code> (состояние FSM) и <code>UserAction_t</code> (ввод).</p>
+<p>На рисунке ниже показан граф связей между основными структурами и перечислениями проекта.</p>
+<div class="image">
+<img src="structs.png" alt="" width="800px"/>
+<div class="caption">
+Граф структур данных</div></div>
+<h1><a class="anchor" id="arch_sec"></a>
+Архитектура</h1>
+<p>Проект разделён на три независимых модуля:</p><ul>
+<li><b>Библиотека игровой логики</b> (brick_game/tetris) — вся механика игры, конечный автомат, работа с фигурами.</li>
+<li><b>Графический интерфейс</b> (gui/cli) — отрисовка игрового поля через ncurses.</li>
+<li><b>Точка входа</b> (<a class="el" href="main_8c.html">main.c</a>) — основной игровой цикл, обработка ввода.</li>
+</ul>
+<h1><a class="anchor" id="fsm_sec"></a>
+Конечный автомат (FSM)</h1>
+<p>Игра управляется конечным автоматом с 7 состояниями:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Состояние   </th><th class="markdownTableHeadNone">Описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Begin   </td><td class="markdownTableBodyNone">Ожидание нажатия кнопки «Старт»    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Spawn   </td><td class="markdownTableBodyNone">Создание новой фигуры    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Moving   </td><td class="markdownTableBodyNone">Обработка ввода, движение фигуры    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Shifting   </td><td class="markdownTableBodyNone">Автоматическое падение фигуры    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Attaching   </td><td class="markdownTableBodyNone">Присоединение фигуры к полю    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GameOver   </td><td class="markdownTableBodyNone">Конец игры    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Break   </td><td class="markdownTableBodyNone">Пауза   </td></tr>
+</table>
+<div class="image">
+<img src="fsm.png" alt="" width="800px"/>
+<div class="caption">
+Граф FSM</div></div>
+<h1><a class="anchor" id="score_sec"></a>
+Система очков</h1>
+<p>Количество очков зависит от числа одновременно заполненных строк:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Строк   </th><th class="markdownTableHeadNone">Очков    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">100    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">300    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">700    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">1500   </td></tr>
+</table>
+<h1><a class="anchor" id="formula_sec"></a>
+Формулы</h1>
+<p><b>Скорость падения фигуры</b> (в миллисекундах) вычисляется по формуле:</p>
+<p class="formulaDsp">
+\[
+  t_{fall} = \frac{1000}{level}
+\]
+</p>
+<p>где \( level \) — текущий уровень игры (от 1 до 10).</p>
+<p><b>Повышение уровня</b> происходит при выполнении условия:</p>
+<p class="formulaDsp">
+\[
+  score &gt; level \times 600
+\]
+</p>
+<p><b>Алгоритм вращения фигуры</b> — поворот матрицы N×N на 90° по часовой стрелке:</p>
+<p class="formulaDsp">
+\[
+  result[j][N-i-1] = matrix[i][j], \quad i,j \in [0, N)
+\]
+</p>
+<h1><a class="anchor" id="controls_sec"></a>
+Управление</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Клавиша   </th><th class="markdownTableHeadNone">Действие    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>e</code>   </td><td class="markdownTableBodyNone">Начать игру    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>q</code>   </td><td class="markdownTableBodyNone">Выйти    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>←</code> <code>→</code>   </td><td class="markdownTableBodyNone">Движение    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>↓</code>   </td><td class="markdownTableBodyNone">Ускорить падение    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Пробел</code>   </td><td class="markdownTableBodyNone">Повернуть фигуру    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Esc</code>   </td><td class="markdownTableBodyNone">Пауза / Продолжить   </td></tr>
+</table>
+<h1><a class="anchor" id="pieces_sec"></a>
+Фигуры Тетрис</h1>
+<div class="image">
+<img src="tetris-pieces.png" alt="" width="500px"/>
+<div class="caption">
+Все 7 тетромино</div></div>
+ </div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

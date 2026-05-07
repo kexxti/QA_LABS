@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BrickGame: Исходный файл brick_game/tetris/fsm.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BrickGame<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Реализация игры «Тетрис» на языке программирования С.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2ee2de302366a9522113dfc9d3962873.html">brick_game</a></li><li class="navelem"><a class="el" href="dir_a27466d1e2cff2d3a32cbaf29900b661.html">tetris</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">fsm.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="fsm_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FSM_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FSM_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="backend_8h.html">backend.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="defines_8h.html">defines.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="tetris__lib_8h.html">tetris_lib.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="fsm_8h.html#a9747541b7368d12152583127a63e4af5">sigact</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="fsm_8h.html#a0bd206f77d2491adad5cf3b48862aaea">start_handler</a>(<a class="code hl_struct" href="structFullInfo.html">FullInfo</a> *full_info);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="fsm_8h.html#a5dfbac2aaac02b1ef69c5f21e5f6b8b0">moving_handler</a>(<a class="code hl_struct" href="structFullInfo.html">FullInfo</a> *full_info);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="fsm_8h.html#aa751c3a0ee7623f7597d0f3de4ce4ecb">pause_handler</a>(<a class="code hl_struct" href="structFullInfo.html">FullInfo</a> *full_info);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="fsm_8h.html#a1c716e28606a352ca7b2187f71c6a48b">spawn_figure</a>(<a class="code hl_struct" href="structFullInfo.html">FullInfo</a> *full_info);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span> <a class="code hl_function" href="fsm_8h.html#a764d631fa961142037c95bd3be2a1ff3">attaching_handler</a>(<a class="code hl_struct" href="structFullInfo.html">FullInfo</a> *full_info);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif  </span><span class="comment">// FSM_H</span></div>
+<div class="ttc" id="abackend_8h_html"><div class="ttname"><a href="backend_8h.html">backend.h</a></div></div>
+<div class="ttc" id="adefines_8h_html"><div class="ttname"><a href="defines_8h.html">defines.h</a></div></div>
+<div class="ttc" id="afsm_8h_html_a0bd206f77d2491adad5cf3b48862aaea"><div class="ttname"><a href="fsm_8h.html#a0bd206f77d2491adad5cf3b48862aaea">start_handler</a></div><div class="ttdeci">void start_handler(FullInfo *full_info)</div><div class="ttdoc">Обработчик состояния Begin — ожидание старта</div><div class="ttdef"><b>Definition</b> fsm.c:47</div></div>
+<div class="ttc" id="afsm_8h_html_a1c716e28606a352ca7b2187f71c6a48b"><div class="ttname"><a href="fsm_8h.html#a1c716e28606a352ca7b2187f71c6a48b">spawn_figure</a></div><div class="ttdeci">void spawn_figure(FullInfo *full_info)</div><div class="ttdoc">Обработчик состояния Spawn — инициализация новой фигуры</div><div class="ttdef"><b>Definition</b> fsm.c:70</div></div>
+<div class="ttc" id="afsm_8h_html_a5dfbac2aaac02b1ef69c5f21e5f6b8b0"><div class="ttname"><a href="fsm_8h.html#a5dfbac2aaac02b1ef69c5f21e5f6b8b0">moving_handler</a></div><div class="ttdeci">void moving_handler(FullInfo *full_info)</div><div class="ttdoc">Обработчик состояния Moving — движение фигуры по вводу пользователя</div><div class="ttdef"><b>Definition</b> fsm.c:87</div></div>
+<div class="ttc" id="afsm_8h_html_a764d631fa961142037c95bd3be2a1ff3"><div class="ttname"><a href="fsm_8h.html#a764d631fa961142037c95bd3be2a1ff3">attaching_handler</a></div><div class="ttdeci">void attaching_handler(FullInfo *full_info)</div><div class="ttdoc">Обработчик состояния Attaching — фиксация фигуры на поле</div><div class="ttdef"><b>Definition</b> fsm.c:146</div></div>
+<div class="ttc" id="afsm_8h_html_a9747541b7368d12152583127a63e4af5"><div class="ttname"><a href="fsm_8h.html#a9747541b7368d12152583127a63e4af5">sigact</a></div><div class="ttdeci">void sigact()</div><div class="ttdoc">Основной диспетчер конечного автомата</div><div class="ttdef"><b>Definition</b> fsm.c:9</div></div>
+<div class="ttc" id="afsm_8h_html_aa751c3a0ee7623f7597d0f3de4ce4ecb"><div class="ttname"><a href="fsm_8h.html#aa751c3a0ee7623f7597d0f3de4ce4ecb">pause_handler</a></div><div class="ttdeci">void pause_handler(FullInfo *full_info)</div><div class="ttdoc">Обработчик состояния Break — пауза</div><div class="ttdef"><b>Definition</b> fsm.c:122</div></div>
+<div class="ttc" id="astructFullInfo_html"><div class="ttname"><a href="structFullInfo.html">FullInfo</a></div><div class="ttdoc">Полное состояние игры (единственный статический экземпляр)</div><div class="ttdef"><b>Definition</b> tetris_lib.h:67</div></div>
+<div class="ttc" id="atetris__lib_8h_html"><div class="ttname"><a href="tetris__lib_8h.html">tetris_lib.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

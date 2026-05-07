@@ -465,7 +465,7 @@ class list {
     --size_;
   }
 
-#if 0
+#if 1
 void pop_back() {
     if (empty()) {
         throw std::logic_error("List is empty");

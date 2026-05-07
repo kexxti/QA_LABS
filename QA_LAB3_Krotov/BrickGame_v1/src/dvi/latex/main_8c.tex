@@ -1,0 +1,55 @@
+\doxysection{Файл main.\+c}
+\hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a13a43e6d814de94978c515cb084873b1}{run}} ()
+\begin{DoxyCompactList}\small\item\em Связывает библиотеку игры и графический интерфейс \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Основная функция \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae5fd3d9871f25d787be7205ab404bfc1}{get\+\_\+user\+\_\+input}} (int user\+\_\+action)
+\begin{DoxyCompactList}\small\item\em Считывает пользовательский ввод \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\Hypertarget{main_8c_ae5fd3d9871f25d787be7205ab404bfc1}\label{main_8c_ae5fd3d9871f25d787be7205ab404bfc1} 
+\index{main.c@{main.c}!get\_user\_input@{get\_user\_input}}
+\index{get\_user\_input@{get\_user\_input}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{get\_user\_input()}{get\_user\_input()}}
+{\footnotesize\ttfamily void get\+\_\+user\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+action }\end{DoxyParamCaption})}
+
+
+
+Считывает пользовательский ввод 
+
+Преобразует код клавиши в действие пользователя и передаёт в FSM. \Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Основная функция 
+
+Инициализируется окно терминала ncurses и задаются его настройки;~\newline
+ Инициализируется генератор случайных чисел;~\newline
+ Запускается игра;~\newline
+ По окончании игры очищается память выделенная под окно ncurses \Hypertarget{main_8c_a13a43e6d814de94978c515cb084873b1}\label{main_8c_a13a43e6d814de94978c515cb084873b1} 
+\index{main.c@{main.c}!run@{run}}
+\index{run@{run}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Связывает библиотеку игры и графический интерфейс 
+
+Основной игровой цикл\+: обновляет состояние, отрисовывает и обрабатывает ввод
+
+Получается вся информация о текущем состоянии игры;~\newline
+ Вызывается основная функцию отрисовки;~\newline
+ Вызывается конечный автомат;~\newline
+ В конце очищается консоль 

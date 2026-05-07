@@ -8,3 +8,7 @@
 ## QA_LAB2
 
 [Отчет](./QA_LAB2_Krotov/README.MD)
+
+## QA_LAB2
+
+[Отчет](./QA_LAB3_Krotov/README.MD)

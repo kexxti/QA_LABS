@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BrickGame: Файл brick_game/tetris/fsm.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BrickGame<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Реализация игры «Тетрис» на языке программирования С.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2ee2de302366a9522113dfc9d3962873.html">brick_game</a></li><li class="navelem"><a class="el" href="dir_a27466d1e2cff2d3a32cbaf29900b661.html">tetris</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл fsm.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="fsm_8h_source.html">fsm.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a9747541b7368d12152583127a63e4af5" id="r_a9747541b7368d12152583127a63e4af5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a9747541b7368d12152583127a63e4af5">sigact</a> ()</td></tr>
+<tr class="memdesc:a9747541b7368d12152583127a63e4af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конечный автомат  <br /></td></tr>
+<tr class="separator:a9747541b7368d12152583127a63e4af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd206f77d2491adad5cf3b48862aaea" id="r_a0bd206f77d2491adad5cf3b48862aaea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a0bd206f77d2491adad5cf3b48862aaea">start_handler</a> (<a class="el" href="structFullInfo.html">FullInfo</a> *full_info)</td></tr>
+<tr class="memdesc:a0bd206f77d2491adad5cf3b48862aaea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает состояние начала игры  <br /></td></tr>
+<tr class="separator:a0bd206f77d2491adad5cf3b48862aaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c716e28606a352ca7b2187f71c6a48b" id="r_a1c716e28606a352ca7b2187f71c6a48b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a1c716e28606a352ca7b2187f71c6a48b">spawn_figure</a> (<a class="el" href="structFullInfo.html">FullInfo</a> *full_info)</td></tr>
+<tr class="memdesc:a1c716e28606a352ca7b2187f71c6a48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает состояние появления фигуры  <br /></td></tr>
+<tr class="separator:a1c716e28606a352ca7b2187f71c6a48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dfbac2aaac02b1ef69c5f21e5f6b8b0" id="r_a5dfbac2aaac02b1ef69c5f21e5f6b8b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a5dfbac2aaac02b1ef69c5f21e5f6b8b0">moving_handler</a> (<a class="el" href="structFullInfo.html">FullInfo</a> *full_info)</td></tr>
+<tr class="memdesc:a5dfbac2aaac02b1ef69c5f21e5f6b8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает состояние движения  <br /></td></tr>
+<tr class="separator:a5dfbac2aaac02b1ef69c5f21e5f6b8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa751c3a0ee7623f7597d0f3de4ce4ecb" id="r_aa751c3a0ee7623f7597d0f3de4ce4ecb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#aa751c3a0ee7623f7597d0f3de4ce4ecb">pause_handler</a> (<a class="el" href="structFullInfo.html">FullInfo</a> *full_info)</td></tr>
+<tr class="memdesc:aa751c3a0ee7623f7597d0f3de4ce4ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает состояние паузы  <br /></td></tr>
+<tr class="separator:aa751c3a0ee7623f7597d0f3de4ce4ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a764d631fa961142037c95bd3be2a1ff3" id="r_a764d631fa961142037c95bd3be2a1ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fsm_8c.html#a764d631fa961142037c95bd3be2a1ff3">attaching_handler</a> (<a class="el" href="structFullInfo.html">FullInfo</a> *full_info)</td></tr>
+<tr class="memdesc:a764d631fa961142037c95bd3be2a1ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает присоединение фигуры к полю  <br /></td></tr>
+<tr class="separator:a764d631fa961142037c95bd3be2a1ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a764d631fa961142037c95bd3be2a1ff3" name="a764d631fa961142037c95bd3be2a1ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a764d631fa961142037c95bd3be2a1ff3">&#9670;&#160;</a></span>attaching_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void attaching_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFullInfo.html">FullInfo</a> *&#160;</td>
+          <td class="paramname"><em>full_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обрабатывает присоединение фигуры к полю </p>
+<p>Обработчик состояния Attaching — фиксация фигуры на поле</p>
+<p>Происходит обновление поля;<br  />
+ Идет проверка на наличие полных линий;<br  />
+ В зависимости от заполненности поля переходит в состояние Конца игры или Спавна новой фигуры </p>
+
+</div>
+</div>
+<a id="a5dfbac2aaac02b1ef69c5f21e5f6b8b0" name="a5dfbac2aaac02b1ef69c5f21e5f6b8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfbac2aaac02b1ef69c5f21e5f6b8b0">&#9670;&#160;</a></span>moving_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moving_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFullInfo.html">FullInfo</a> *&#160;</td>
+          <td class="paramname"><em>full_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обрабатывает состояние движения </p>
+<p>Обработчик состояния Moving — движение фигуры по вводу пользователя</p>
+<p>В зависимости от ввода пользователя двигает фигуру в нужном направлении;<br  />
+ В случае истечения времени переходит в состояние Смещения </p>
+
+</div>
+</div>
+<a id="aa751c3a0ee7623f7597d0f3de4ce4ecb" name="aa751c3a0ee7623f7597d0f3de4ce4ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa751c3a0ee7623f7597d0f3de4ce4ecb">&#9670;&#160;</a></span>pause_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pause_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFullInfo.html">FullInfo</a> *&#160;</td>
+          <td class="paramname"><em>full_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обрабатывает состояние паузы </p>
+<p>Обработчик состояния Break — пауза</p>
+<p>В зависимости от ввода пользователя переходит в состояние Движения или Выхода из игры </p>
+
+</div>
+</div>
+<a id="a9747541b7368d12152583127a63e4af5" name="a9747541b7368d12152583127a63e4af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9747541b7368d12152583127a63e4af5">&#9670;&#160;</a></span>sigact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sigact </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конечный автомат </p>
+<p>Основная функция конечного автомата — обрабатывает текущее состояние</p>
+<p>Основной диспетчер конечного автомата</p>
+<p>Функция обработки текущего состояния игры;<br  />
+ Меняет состояние игры в зависимости от ввода пользователя </p>
+
+</div>
+</div>
+<a id="a1c716e28606a352ca7b2187f71c6a48b" name="a1c716e28606a352ca7b2187f71c6a48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c716e28606a352ca7b2187f71c6a48b">&#9670;&#160;</a></span>spawn_figure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spawn_figure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFullInfo.html">FullInfo</a> *&#160;</td>
+          <td class="paramname"><em>full_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обрабатывает состояние появления фигуры </p>
+<p>Обработчик состояния Spawn — инициализация новой фигуры</p>
+<p>Инициализируются начальные координаты фигуры;<br  />
+ Присваиваются координаты следующей фигуры текущей;<br  />
+ Создается новая следующая фигура </p>
+
+</div>
+</div>
+<a id="a0bd206f77d2491adad5cf3b48862aaea" name="a0bd206f77d2491adad5cf3b48862aaea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bd206f77d2491adad5cf3b48862aaea">&#9670;&#160;</a></span>start_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void start_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFullInfo.html">FullInfo</a> *&#160;</td>
+          <td class="paramname"><em>full_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обрабатывает состояние начала игры </p>
+<p>Обработчик состояния Begin — ожидание старта</p>
+<p>В зависимости от ввода пользователя переходит в состояние Спавна или Выхода из игры </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

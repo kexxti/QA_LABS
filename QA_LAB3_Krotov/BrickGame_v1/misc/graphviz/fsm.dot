@@ -1,0 +1,164 @@
+digraph tetris_fsm {
+
+    graph [
+        rankdir=LR
+        splines=spline
+        overlap=false
+        nodesep=0.7
+        ranksep=1.0
+        fontname="Arial"
+        fontsize=12
+        bgcolor="#FAFAFA"
+        pad=0.4
+    ]
+
+    node [
+        shape=ellipse
+        style="filled,rounded"
+        fontname="Arial"
+        fontsize=11
+        penwidth=1.5
+        color="#2874A6"
+        fillcolor="#EAF2F8"
+    ]
+
+    edge [
+        fontname="Arial"
+        fontsize=10
+        color="#555555"
+        arrowsize=0.8
+    ]
+
+    // ===== STATES =====
+
+    Begin [
+        label="Begin\nОжидание старта"
+        fillcolor="#D6EAF8"
+    ]
+
+    Spawn [
+        label="Spawn\nСоздание фигуры"
+        fillcolor="#D5F5E3"
+    ]
+
+    Moving [
+        label="Moving\nВвод и движение"
+        fillcolor="#FCF3CF"
+    ]
+
+    Shifting [
+        label="Shifting\nАвтопадение"
+        fillcolor="#FDEBD0"
+    ]
+
+    Attaching [
+        label="Attaching\nФиксация фигуры"
+        fillcolor="#FADBD8"
+    ]
+
+    Break [
+        label="Break\nПауза"
+        fillcolor="#E8DAEF"
+    ]
+
+    GameOver [
+        label="GameOver\nКонец игры"
+        fillcolor="#F5B7B1"
+    ]
+
+    Exit [
+        label="Exit\nВыход"
+        shape=doublecircle
+        fillcolor="#D5D8DC"
+        color="#566573"
+    ]
+
+    // ===== MAIN FLOW =====
+
+    Begin -> Spawn [
+        label="Start"
+        penwidth=2
+    ]
+
+    Spawn -> Moving [
+        label="spawn_figure()"
+    ]
+
+    Moving -> Shifting [
+        label="timer expired"
+    ]
+
+    Shifting -> Moving [
+        label="move_down()"
+    ]
+
+    Moving -> Attaching [
+        label="collision"
+    ]
+
+    Shifting -> Attaching [
+        label="collision"
+    ]
+
+    Attaching -> Spawn [
+        label="next figure"
+    ]
+
+    Attaching -> GameOver [
+        label="game over"
+    ]
+
+    GameOver -> Begin [
+        label="restart"
+    ]
+
+    // ===== USER ACTIONS =====
+
+    Moving -> Moving [
+        label="Left"
+        color="#7D6608"
+    ]
+
+    Moving -> Moving [
+        label="Right"
+        color="#7D6608"
+    ]
+
+    Moving -> Moving [
+        label="Rotate"
+        color="#7D6608"
+    ]
+
+    Moving -> Moving [
+        label="Soft Drop"
+        color="#7D6608"
+    ]
+
+    // ===== PAUSE / EXIT =====
+
+    Moving -> Break [
+        label="Pause"
+    ]
+
+    Break -> Moving [
+        label="Resume"
+    ]
+
+    Begin -> Exit [
+        label="Terminate"
+        style=dashed
+    ]
+
+    Break -> Exit [
+        label="Terminate"
+        style=dashed
+    ]
+
+    // ===== LAYOUT HELPERS =====
+
+    { rank=same; Moving; Shifting; }
+
+    { rank=same; Begin; Break; }
+
+    { rank=same; GameOver; Exit; }
+}
