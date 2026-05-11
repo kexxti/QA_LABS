@@ -12,3 +12,11 @@
 ## QA_LAB3
 
 [Отчет](./QA_LAB3_Krotov/README.md)
+
+## QA_LAB4
+
+[Отчет](./QA_LAB4_Krotov/README.md)
+
+## QA_LAB5
+
+[Отчет](./QA_LAB5_Krotov/README.md)
